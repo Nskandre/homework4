@@ -13,9 +13,6 @@ def fizz_buzz(start, stop):
     return result_fizz_buzz
 
 
-# print(fizz_buzz(1000, 20000))
-
-
 def plural_form(num, word1 = '', word2 = '', word3 = ''):
     '''Returns correct word for number
 
@@ -36,4 +33,3 @@ def plural_form(num, word1 = '', word2 = '', word3 = ''):
     
     return result_plural_form
 
-print(12, plural_form(12, 'студент', 'студента', 'студентов'))
