@@ -33,3 +33,14 @@ def plural_form(num, word1 = '', word2 = '', word3 = ''):
     
     return result_plural_form
 
+
+def html_decorator(func):
+    def wrapper(tag_name, **kwargs):
+        attributes = ''
+        for k, v in kwargs.items():
+            attributes += f'{k}="{v}" '
+        result_wrapper = ''
+
+
+def to_string(input_value):
+    return str(input_value)
