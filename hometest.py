@@ -47,10 +47,5 @@ def wrapper_over_decorator(taq_name, **kwargs):
     return decorator
 
 
-@wrapper_over_decorator('body')
-@wrapper_over_decorator('div', width=200, height=100)
-@wrapper_over_decorator('a', href='https://yandex.ru/')
 def to_string(input_value):
     return str(input_value)
-
-print(to_string('ссылка на яндекс'))
