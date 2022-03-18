@@ -34,13 +34,23 @@ def plural_form(num, word1 = '', word2 = '', word3 = ''):
     return result_plural_form
 
 
-def html_decorator(func):
-    def wrapper(tag_name, **kwargs):
-        attributes = ''
+def wrapper_over_decorator(taq_name, **kwargs):
+    taq_name_befor = taq_name
+    if kwargs:
         for k, v in kwargs.items():
-            attributes += f'{k}="{v}" '
-        result_wrapper = ''
+            taq_name_befor += f' {k}="{v}"'
+    def decorator(func):
+        def wrapper_of_func(*args, **kwargs):
+            res = f'<{taq_name_befor}' + f'>{func(*args, **kwargs)}</' + f'{taq_name}>'
+            return res
+        return wrapper_of_func
+    return decorator
 
 
+@wrapper_over_decorator('body')
+@wrapper_over_decorator('div', width=200, height=100)
+@wrapper_over_decorator('a', href='https://yandex.ru/')
 def to_string(input_value):
     return str(input_value)
+
+print(to_string('ссылка на яндекс'))
