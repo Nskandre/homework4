@@ -34,7 +34,7 @@ def plural_form(num, word1 = '', word2 = '', word3 = ''):
     return result_plural_form
 
 
-def wrapper_over_decorator(taq_name, **kwargs):
+def html(taq_name, **kwargs):
     taq_name_befor = taq_name
     if kwargs:
         for k, v in kwargs.items():
